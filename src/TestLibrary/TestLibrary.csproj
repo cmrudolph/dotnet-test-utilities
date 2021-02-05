@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Database\**\*.sql" LinkBase="LinkedSqlResources" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="SelfTest\Resources\Scripts\Script1.sql" />
+    <None Remove="SelfTest\Resources\Scripts\Script2.sql" />
+    <None Remove="SelfTest\Resources\Tables\Misplaced.txt" />
+    <None Remove="SelfTest\Resources\Tables\Table1.sql" />
+    <None Remove="SelfTest\Resources\Tables\Table2.sql" />
+    <None Remove="SelfTest\Resources\Tacos\Taco1.sql" />
+    <None Remove="TestScripts\CreateAdvisers.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SelfTest\Resources\Scripts\Script1.sql" />
+    <EmbeddedResource Include="SelfTest\Resources\Scripts\Script2.sql" />
+    <EmbeddedResource Include="SelfTest\Resources\Tables\Misplaced.txt" />
+    <EmbeddedResource Include="SelfTest\Resources\Tables\Table1.sql" />
+    <EmbeddedResource Include="SelfTest\Resources\Tables\Table2.sql" />
+    <EmbeddedResource Include="SelfTest\Resources\Tacos\Taco1.sql" />
+    <EmbeddedResource Include="TestScripts\CreateAdvisers.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup" Version="4.5.0" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
